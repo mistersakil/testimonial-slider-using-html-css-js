@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial slider using html css javascript</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Testimonial slider</h1>
+      <h4 class="subTitle">using html, css, javascript</h4>
+      <div class="sliderWrapper">
+        <div class="slider">
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">Mahmud Hossain Kiron</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-2.jpeg"" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">mister wazi</h5>
+              <small class="company">TeleConsult Group</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-3.jpeg"" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">RA Nahian</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-1.jpg" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">Mosiur Rahman</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-4.jpg" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">Aamir Hamja</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-5.jpg" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">Shaker Shamim</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-6.jpg" alt="pic-1" />
+            </figure>
+          </article>
+          <article class="slide">
+            <div class="content">
+              <p class="message">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                vero fugit debitis deleniti assumenda, eaque nesciunt tempora
+                aspernatur, dolores accusamus esse perspiciatis voluptate sunt
+                atque commodi vitae impedit culpa. Pariatur.
+              </p>
+              <h5 class="heading">Ashraf Uddin</h5>
+              <small class="company">iHelpBD</small>
+            </div>
+            <figure class="figure">
+              <img src="./images/user-7.jpg" alt="pic-1" />
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div class="indicators">
+        <span class="btn active"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+      </div>
+      <footer>
+        <p>
+          designed by
+          <a href="https://www.facebook.com/octapia.com.bd/" target="_blank"
+            >Octapia</a
+          >
+        </p>
+        <p>
+          powered by
+          <a href="https://www.facebook.com/groups/websiteowner" target="_blank"
+            >Website Owner</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      let sliderWrapper = document.querySelector(".sliderWrapper");
+      let sliderWrapperWidth = sliderWrapper.computedStyleMap().get("width");
+
+      let slider = document.querySelector(".slider");
+      let slides = slider.querySelectorAll(".slide");
+      let numberOfSlides = slides.length;
+
+      // function
+      function applyStyle() {
+        slider.style.width = `${sliderWrapperWidth.value * numberOfSlides}px`;
+        for (i = 0; i < numberOfSlides; i++) {
+          slides[i].style.width = `${sliderWrapperWidth.value}px`;
+        }
+      }
+      applyStyle();
+      window.onresize = function (event) {
+        sliderWrapperWidth = sliderWrapper.computedStyleMap().get("width");
+        console.log(sliderWrapperWidth);
+        applyStyle();
+      };
+
+      /* Indicator actions */
+      let indicators = document.querySelectorAll(".indicators .btn");
+      function indicatorInactive() {
+        for (i = 0; i < indicators.length; i++) {
+          indicators[i].classList.remove("active");
+        }
+      }
+
+      for (i = 0; i < indicators.length; i++) {
+        let translateTo = (100 / numberOfSlides) * i;
+        indicators[i].onclick = function (event) {
+          slider.style.transform = `translate(-${translateTo}%)`;
+          indicatorInactive();
+          this.classList.add("active");
+        };
+      }
+    </script>
+  </body>
+</html>
